@@ -80,3 +80,7 @@ button:hover {
   background-color: #555;
   cursor: pointer;
 }
+
+#frogFacts {
+  display: none;
+}

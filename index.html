@@ -2,7 +2,8 @@
 <html>
   <head>
     <title>My Website</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
 
   <body>
@@ -11,6 +12,7 @@
       <nav>
         <a href="index.html">Home</a> | <a href="about.html">About</a> |
         <a href="contact.html">Contact</a>
+        <a href="calculator.html">Calculator</a>
       </nav>
     </header>
 
@@ -30,7 +32,7 @@
       <a href="https://www.pittstate.edu/" target="_blank">Pittstate.edu</a>
 
       <h3>Interesting Facts About Frogs:</h3>
-      <ul>
+      <ul id="frogFacts">
         <li>
           Frogs do not need to drink water as they absorb it through their skin.
         </li>
@@ -54,9 +56,23 @@
           the equivalent of a human jumping 30 meters.
         </li>
       </ul>
+      <button id="toggleFrogFacts">Read More</button>
     </main>
     <footer>
       <p>&copy; 2023 Sean</p>
     </footer>
   </body>
+  <script>
+    $(document).ready(function () {
+      $('#toggleFrogFacts').click(function () {
+        $('#frogFacts').toggle();
+
+        if ($('#frogFacts').is(':visible')) {
+          $(this).text('Read Less');
+        } else {
+          $(this).text('Read More');
+        }
+      });
+    });
+  </script>
 </html>
